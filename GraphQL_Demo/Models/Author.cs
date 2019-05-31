@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Entity;
 
 namespace GraphQL_Demo.Models
 {
+   
+
     public class Author
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Bio { get; set; }
-        public string ImgUrl { get; set; }
-        public string ProfileUrl { get; set; }
+        public string Imgurl { get; set; }
+        public string Profileurl { get; set; }
     }
 
     public class Comment
@@ -35,7 +38,7 @@ namespace GraphQL_Demo.Models
         public DateTime Date { get; set; }
         public string Url { get; set; }
         public Author Author { get; set; }
-        public string[] Categories { get; set; }
+        public string Categories { get; set; }
         public Rating Rating { get; set; }
         public List<Comment> Comments { get; set; }
     }
@@ -49,6 +52,6 @@ namespace GraphQL_Demo.Models
     }
     public enum SNType
     {
-        INSTAGRAM, TWITTER
+        INSTAGRAM, TWITTER, FACEBOOK
     }
 }

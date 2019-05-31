@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GraphQLModelStoreContainer" CdmEntityContainer="GraphQLEntities1">
+    <EntitySetMapping Name="Tbl_Author">
+      <EntityTypeMapping TypeName="GraphQLModel.Tbl_Author">
+        <MappingFragment StoreEntitySet="Tbl_Author">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="BIO" ColumnName="BIO" />
+          <ScalarProperty Name="IMGURL" ColumnName="IMGURL" />
+          <ScalarProperty Name="PROFURL" ColumnName="PROFURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Comment">
+      <EntityTypeMapping TypeName="GraphQLModel.Tbl_Comment">
+        <MappingFragment StoreEntitySet="Tbl_Comment">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="POST_ID" ColumnName="POST_ID" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="COUNT" ColumnName="COUNT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Post">
+      <EntityTypeMapping TypeName="GraphQLModel.Tbl_Post">
+        <MappingFragment StoreEntitySet="Tbl_Post">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AUTHOR_ID" ColumnName="AUTHOR_ID" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="CATEGORIES" ColumnName="CATEGORIES" />
+          <ScalarProperty Name="RATING_ID" ColumnName="RATING_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Rating">
+      <EntityTypeMapping TypeName="GraphQLModel.Tbl_Rating">
+        <MappingFragment StoreEntitySet="Tbl_Rating">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PERCENTAGE" ColumnName="PERCENTAGE" />
+          <ScalarProperty Name="COUNT" ColumnName="COUNT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_SocialNetwork">
+      <EntityTypeMapping TypeName="GraphQLModel.Tbl_SocialNetwork">
+        <MappingFragment StoreEntitySet="Tbl_SocialNetwork">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AUTHOR_ID" ColumnName="AUTHOR_ID" />
+          <ScalarProperty Name="SOCIALNETWORK_ID" ColumnName="SOCIALNETWORK_ID" />
+          <ScalarProperty Name="NICKNAME" ColumnName="NICKNAME" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_SocialNetworkType">
+      <EntityTypeMapping TypeName="GraphQLModel.Tbl_SocialNetworkType">
+        <MappingFragment StoreEntitySet="Tbl_SocialNetworkType">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

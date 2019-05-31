@@ -6,7 +6,7 @@ namespace GraphQL_Demo.Queries
 {
     public class AuthorQuery : ObjectGraphType
     {
-        public AuthorQuery(BlogService blogService)
+        public AuthorQuery(DataService blogService)
         {
             Field<AuthorType>(
                 name: "author",

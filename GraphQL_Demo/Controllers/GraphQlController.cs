@@ -11,11 +11,11 @@ namespace GraphQL_Demo.Controllers
 {
     public class GraphQlController : System.Web.Http.ApiController
     {
-        readonly BlogService blogService;
+        readonly DataService blogService;
 
         public GraphQlController()
         {
-            this.blogService = new BlogService();
+            this.blogService = new DataService();
         }
        
 
@@ -35,6 +35,27 @@ namespace GraphQL_Demo.Controllers
             }
             return result;
 
+        }
+
+        [HttpGet]
+        public IActionResult GetAllData()
+        {
+            return new ObjectResult(blogService.GetAllAuthors());
+        }
+        [HttpGet("{id}")]
+        public IActionResult GetAuthorDataById(int id)
+        {
+            return new ObjectResult(blogService.GetAuthorById(id));
+        }
+        [HttpGet("{id}/posts")]
+        public IActionResult GetPostsDetailsByAuthor(int id)
+        {
+            return new ObjectResult(blogService.GetPostsByAuthor(id));
+        }
+        [HttpGet("{id}/socials")]
+        public IActionResult GetSocialSitesDetailsByAuthor(int id)
+        {
+            return new ObjectResult(blogService.GetSNsByAuthor(id));
         }
     }
 }

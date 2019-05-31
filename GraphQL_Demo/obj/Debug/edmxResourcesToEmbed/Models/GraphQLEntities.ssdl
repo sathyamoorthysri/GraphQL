@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GraphQLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Tbl_Author">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="BIO" Type="nvarchar" MaxLength="100" />
+    <Property Name="IMGURL" Type="nvarchar" MaxLength="100" />
+    <Property Name="PROFURL" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Tbl_Comment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="POST_ID" Type="int" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="100" />
+    <Property Name="URL" Type="nvarchar" MaxLength="100" />
+    <Property Name="COUNT" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_Post">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AUTHOR_ID" Type="int" />
+    <Property Name="TITLE" Type="nvarchar" MaxLength="100" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="100" />
+    <Property Name="DATE" Type="datetime" />
+    <Property Name="URL" Type="nvarchar" MaxLength="100" />
+    <Property Name="CATEGORIES" Type="nvarchar" MaxLength="100" />
+    <Property Name="RATING_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_Rating">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PERCENTAGE" Type="int" />
+    <Property Name="COUNT" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_SocialNetwork">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AUTHOR_ID" Type="int" />
+    <Property Name="SOCIALNETWORK_ID" Type="int" />
+    <Property Name="NICKNAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="URL" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Tbl_SocialNetworkType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK__Tbl_Comme__POST___5629CD9C">
+    <End Role="Tbl_Post" Type="Self.Tbl_Post" Multiplicity="0..1" />
+    <End Role="Tbl_Comment" Type="Self.Tbl_Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Post">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tbl_Comment">
+        <PropertyRef Name="POST_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tbl_Post__AUTHOR__5165187F">
+    <End Role="Tbl_Author" Type="Self.Tbl_Author" Multiplicity="0..1" />
+    <End Role="Tbl_Post" Type="Self.Tbl_Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Author">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tbl_Post">
+        <PropertyRef Name="AUTHOR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tbl_Post__RATING__52593CB8">
+    <End Role="Tbl_Rating" Type="Self.Tbl_Rating" Multiplicity="0..1" />
+    <End Role="Tbl_Post" Type="Self.Tbl_Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Rating">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tbl_Post">
+        <PropertyRef Name="RATING_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tbl_Socia__SOCIA__4CA06362">
+    <End Role="Tbl_SocialNetworkType" Type="Self.Tbl_SocialNetworkType" Multiplicity="0..1" />
+    <End Role="Tbl_SocialNetwork" Type="Self.Tbl_SocialNetwork" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_SocialNetworkType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tbl_SocialNetwork">
+        <PropertyRef Name="SOCIALNETWORK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GraphQLModelStoreContainer">
+    <EntitySet Name="Tbl_Author" EntityType="Self.Tbl_Author" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Comment" EntityType="Self.Tbl_Comment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Post" EntityType="Self.Tbl_Post" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Rating" EntityType="Self.Tbl_Rating" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_SocialNetwork" EntityType="Self.Tbl_SocialNetwork" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_SocialNetworkType" EntityType="Self.Tbl_SocialNetworkType" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Tbl_Comme__POST___5629CD9C" Association="Self.FK__Tbl_Comme__POST___5629CD9C">
+      <End Role="Tbl_Post" EntitySet="Tbl_Post" />
+      <End Role="Tbl_Comment" EntitySet="Tbl_Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tbl_Post__AUTHOR__5165187F" Association="Self.FK__Tbl_Post__AUTHOR__5165187F">
+      <End Role="Tbl_Author" EntitySet="Tbl_Author" />
+      <End Role="Tbl_Post" EntitySet="Tbl_Post" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tbl_Post__RATING__52593CB8" Association="Self.FK__Tbl_Post__RATING__52593CB8">
+      <End Role="Tbl_Rating" EntitySet="Tbl_Rating" />
+      <End Role="Tbl_Post" EntitySet="Tbl_Post" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tbl_Socia__SOCIA__4CA06362" Association="Self.FK__Tbl_Socia__SOCIA__4CA06362">
+      <End Role="Tbl_SocialNetworkType" EntitySet="Tbl_SocialNetworkType" />
+      <End Role="Tbl_SocialNetwork" EntitySet="Tbl_SocialNetwork" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

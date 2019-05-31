@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="398821b1b670413f8347a7ab8a5de04c" Name="Diagram1" ZoomLevel="73">
+        <EntityTypeShape EntityType="GraphQLModel.Tbl_Author" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GraphQLModel.Tbl_Comment" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GraphQLModel.Tbl_Post" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="GraphQLModel.Tbl_Rating" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GraphQLModel.Tbl_SocialNetwork" Width="1.5" PointX="5" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GraphQLModel.Tbl_SocialNetworkType" Width="1.5" PointX="2.75" PointY="6.125" IsExpanded="true" />
+        <AssociationConnector Association="GraphQLModel.FK__Tbl_Post__AUTHOR__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="GraphQLModel.FK__Tbl_Comme__POST___5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="GraphQLModel.FK__Tbl_Post__RATING__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="GraphQLModel.FK__Tbl_Socia__SOCIA__4CA06362" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
