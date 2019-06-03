@@ -91,10 +91,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2019 13:20:43</publishTime>
     </File>
     <File Include="bin/GraphQL_Demo.dll">
-      <publishTime>05/31/2019 20:24:43</publishTime>
+      <publishTime>06/03/2019 07:42:19</publishTime>
     </File>
     <File Include="bin/GraphQL_Demo.pdb">
-      <publishTime>05/31/2019 20:24:43</publishTime>
+      <publishTime>06/03/2019 07:42:19</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.TelemetryCorrelation.dll">
       <publishTime>05/31/2019 13:20:43</publishTime>
@@ -733,7 +733,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2019 13:20:42</publishTime>
     </File>
     <File Include="Models/GraphQLEntities.edmx.diagram">
-      <publishTime>05/31/2019 19:14:09</publishTime>
+      <publishTime>05/31/2019 20:45:46</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>05/31/2019 13:20:42</publishTime>
@@ -778,7 +778,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2019 13:20:42</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/31/2019 20:24:45</publishTime>
+      <publishTime>06/03/2019 07:42:20</publishTime>
     </File>
   </ItemGroup>
 </Project>
