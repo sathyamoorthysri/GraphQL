@@ -6,8 +6,6 @@ using System.Data.Entity;
 
 namespace GraphQL_Demo.Models
 {
-   
-
     public class Author
     {
         public int Id { get; set; }

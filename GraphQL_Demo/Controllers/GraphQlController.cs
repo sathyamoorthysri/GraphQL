@@ -11,17 +11,17 @@ namespace GraphQL_Demo.Controllers
 {
     public class GraphQlController : System.Web.Http.ApiController
     {
-        readonly DataService blogService;
+        readonly DataService dataService;
 
         public GraphQlController()
         {
-            this.blogService = new DataService();
+            this.dataService = new DataService();
         }
        
 
         public async Task<object> Post([FromBody] GraphQlQuery query)
         {
-            var schema = new Schema { Query = new AuthorQuery(blogService) };
+            var schema = new Schema { Query = new AuthorQuery(dataService) };
             var result = await new DocumentExecuter().ExecuteAsync(x =>
             {
                 x.Schema = schema;
