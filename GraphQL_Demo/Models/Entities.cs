@@ -50,6 +50,6 @@ namespace GraphQL_Demo.Models
     }
     public enum SNType
     {
-        INSTAGRAM, TWITTER, FACEBOOK
+        INSTAGRAM, TWITTER, FACEBOOK, LINKEDIN
     }
 }
