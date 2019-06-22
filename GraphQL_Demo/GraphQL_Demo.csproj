@@ -306,40 +306,40 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities.cs" />
-    <Compile Include="Models\GraphQLEntities.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GraphQLEntities.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\GraphQLEntities.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GraphQLEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\GraphQLEntities.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GraphQLEntities.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\GraphQLEntity.cs" />
     <Compile Include="Models\GraphQL\GraphQLQuery.cs" />
+    <Compile Include="Models\GraphQL_DemoEntityModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GraphQL_DemoEntityModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GraphQL_DemoEntityModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GraphQL_DemoEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GraphQL_DemoEntityModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GraphQL_DemoEntityModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Tbl_Author.cs">
-      <DependentUpon>GraphQLEntities.tt</DependentUpon>
+      <DependentUpon>GraphQL_DemoEntityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tbl_Comment.cs">
-      <DependentUpon>GraphQLEntities.tt</DependentUpon>
+      <DependentUpon>GraphQL_DemoEntityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tbl_Post.cs">
-      <DependentUpon>GraphQLEntities.tt</DependentUpon>
+      <DependentUpon>GraphQL_DemoEntityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tbl_Rating.cs">
-      <DependentUpon>GraphQLEntities.tt</DependentUpon>
+      <DependentUpon>GraphQL_DemoEntityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tbl_SocialNetwork.cs">
-      <DependentUpon>GraphQLEntities.tt</DependentUpon>
+      <DependentUpon>GraphQL_DemoEntityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tbl_SocialNetworkType.cs">
-      <DependentUpon>GraphQLEntities.tt</DependentUpon>
+      <DependentUpon>GraphQL_DemoEntityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\EntityQuery.cs" />
@@ -355,15 +355,15 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\GraphQLEntities.Context.tt">
+    <Content Include="Models\GraphQL_DemoEntityModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>GraphQLEntities.edmx</DependentUpon>
-      <LastGenOutput>GraphQLEntities.Context.cs</LastGenOutput>
+      <DependentUpon>GraphQL_DemoEntityModel.edmx</DependentUpon>
+      <LastGenOutput>GraphQL_DemoEntityModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\GraphQLEntities.tt">
+    <Content Include="Models\GraphQL_DemoEntityModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>GraphQLEntities.edmx</DependentUpon>
-      <LastGenOutput>GraphQLEntities.cs</LastGenOutput>
+      <DependentUpon>GraphQL_DemoEntityModel.edmx</DependentUpon>
+      <LastGenOutput>GraphQL_DemoEntityModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -386,12 +386,12 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <EntityDeploy Include="Models\GraphQLEntities.edmx">
+    <EntityDeploy Include="Models\GraphQL_DemoEntityModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>GraphQLEntities.Designer.cs</LastGenOutput>
+      <LastGenOutput>GraphQL_DemoEntityModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\GraphQLEntities.edmx.diagram">
-      <DependentUpon>GraphQLEntities.edmx</DependentUpon>
+    <Content Include="Models\GraphQL_DemoEntityModel.edmx.diagram">
+      <DependentUpon>GraphQL_DemoEntityModel.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />

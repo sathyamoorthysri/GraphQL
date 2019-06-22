@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GraphQLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Tbl_Author">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="BIO" Type="nvarchar" MaxLength="100" />
+          <Property Name="IMGURL" Type="nvarchar" MaxLength="100" />
+          <Property Name="PROFURL" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Tbl_Comment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="POST_ID" Type="int" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="100" />
+          <Property Name="URL" Type="nvarchar" MaxLength="100" />
+          <Property Name="COUNT" Type="int" />
+        </EntityType>
+        <EntityType Name="Tbl_Post">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AUTHOR_ID" Type="int" />
+          <Property Name="TITLE" Type="nvarchar" MaxLength="100" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="100" />
+          <Property Name="DATE" Type="datetime" />
+          <Property Name="URL" Type="nvarchar" MaxLength="100" />
+          <Property Name="CATEGORIES" Type="nvarchar" MaxLength="100" />
+          <Property Name="RATING_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="Tbl_Rating">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PERCENTAGE" Type="int" />
+          <Property Name="COUNT" Type="int" />
+        </EntityType>
+        <EntityType Name="Tbl_SocialNetwork">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AUTHOR_ID" Type="int" />
+          <Property Name="SOCIALNETWORK_ID" Type="int" />
+          <Property Name="NICKNAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="URL" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Tbl_SocialNetworkType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="GraphQLModelStoreContainer">
+          <EntitySet Name="Tbl_Author" EntityType="Self.Tbl_Author" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Comment" EntityType="Self.Tbl_Comment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Post" EntityType="Self.Tbl_Post" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Rating" EntityType="Self.Tbl_Rating" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_SocialNetwork" EntityType="Self.Tbl_SocialNetwork" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_SocialNetworkType" EntityType="Self.Tbl_SocialNetworkType" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GraphQLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tbl_Author">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BIO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IMGURL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PROFURL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_Comment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="POST_ID" Type="Int32" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="URL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="COUNT" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Tbl_Post">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AUTHOR_ID" Type="Int32" />
+          <Property Name="TITLE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DATE" Type="DateTime" Precision="3" />
+          <Property Name="URL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CATEGORIES" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RATING_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Tbl_Rating">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PERCENTAGE" Type="Int32" />
+          <Property Name="COUNT" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Tbl_SocialNetwork">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AUTHOR_ID" Type="Int32" />
+          <Property Name="SOCIALNETWORK_ID" Type="Int32" />
+          <Property Name="NICKNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="URL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_SocialNetworkType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tbl_Author" EntityType="Self.Tbl_Author" />
+          <EntitySet Name="Tbl_Comment" EntityType="Self.Tbl_Comment" />
+          <EntitySet Name="Tbl_Post" EntityType="Self.Tbl_Post" />
+          <EntitySet Name="Tbl_Rating" EntityType="Self.Tbl_Rating" />
+          <EntitySet Name="Tbl_SocialNetwork" EntityType="Self.Tbl_SocialNetwork" />
+          <EntitySet Name="Tbl_SocialNetworkType" EntityType="Self.Tbl_SocialNetworkType" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GraphQLModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Tbl_Author">
+            <EntityTypeMapping TypeName="GraphQLModel.Tbl_Author">
+              <MappingFragment StoreEntitySet="Tbl_Author">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="BIO" ColumnName="BIO" />
+                <ScalarProperty Name="IMGURL" ColumnName="IMGURL" />
+                <ScalarProperty Name="PROFURL" ColumnName="PROFURL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Comment">
+            <EntityTypeMapping TypeName="GraphQLModel.Tbl_Comment">
+              <MappingFragment StoreEntitySet="Tbl_Comment">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="POST_ID" ColumnName="POST_ID" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="COUNT" ColumnName="COUNT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Post">
+            <EntityTypeMapping TypeName="GraphQLModel.Tbl_Post">
+              <MappingFragment StoreEntitySet="Tbl_Post">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AUTHOR_ID" ColumnName="AUTHOR_ID" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="CATEGORIES" ColumnName="CATEGORIES" />
+                <ScalarProperty Name="RATING_ID" ColumnName="RATING_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Rating">
+            <EntityTypeMapping TypeName="GraphQLModel.Tbl_Rating">
+              <MappingFragment StoreEntitySet="Tbl_Rating">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PERCENTAGE" ColumnName="PERCENTAGE" />
+                <ScalarProperty Name="COUNT" ColumnName="COUNT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_SocialNetwork">
+            <EntityTypeMapping TypeName="GraphQLModel.Tbl_SocialNetwork">
+              <MappingFragment StoreEntitySet="Tbl_SocialNetwork">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AUTHOR_ID" ColumnName="AUTHOR_ID" />
+                <ScalarProperty Name="SOCIALNETWORK_ID" ColumnName="SOCIALNETWORK_ID" />
+                <ScalarProperty Name="NICKNAME" ColumnName="NICKNAME" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_SocialNetworkType">
+            <EntityTypeMapping TypeName="GraphQLModel.Tbl_SocialNetworkType">
+              <MappingFragment StoreEntitySet="Tbl_SocialNetworkType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

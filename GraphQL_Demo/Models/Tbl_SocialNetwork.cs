@@ -19,7 +19,5 @@ namespace GraphQL_Demo.Models
         public Nullable<int> SOCIALNETWORK_ID { get; set; }
         public string NICKNAME { get; set; }
         public string URL { get; set; }
-    
-        public virtual Tbl_SocialNetworkType Tbl_SocialNetworkType { get; set; }
     }
 }

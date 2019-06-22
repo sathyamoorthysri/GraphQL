@@ -14,17 +14,8 @@ namespace GraphQL_Demo.Models
     
     public partial class Tbl_SocialNetworkType
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Tbl_SocialNetworkType()
-        {
-            this.Tbl_SocialNetwork = new HashSet<Tbl_SocialNetwork>();
-        }
-    
         public int ID { get; set; }
         public string NAME { get; set; }
         public string DESCRIPTION { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tbl_SocialNetwork> Tbl_SocialNetwork { get; set; }
     }
 }

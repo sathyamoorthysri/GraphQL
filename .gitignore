@@ -6,3 +6,7 @@
 /.vs/GraphQL
 /GraphQL_Demo/bin/
 /GraphQL_Demo/obj/
+*.dll
+*.manifest
+*.txt
+*.cache

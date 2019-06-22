@@ -14,19 +14,10 @@ namespace GraphQL_Demo.Models
     
     public partial class Tbl_Author
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Tbl_Author()
-        {
-            this.Tbl_Post = new HashSet<Tbl_Post>();
-        }
-    
         public int ID { get; set; }
         public string NAME { get; set; }
         public string BIO { get; set; }
         public string IMGURL { get; set; }
         public string PROFURL { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tbl_Post> Tbl_Post { get; set; }
     }
 }

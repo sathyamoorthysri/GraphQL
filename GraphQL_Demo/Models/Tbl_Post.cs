@@ -14,12 +14,6 @@ namespace GraphQL_Demo.Models
     
     public partial class Tbl_Post
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Tbl_Post()
-        {
-            this.Tbl_Comment = new HashSet<Tbl_Comment>();
-        }
-    
         public int ID { get; set; }
         public Nullable<int> AUTHOR_ID { get; set; }
         public string TITLE { get; set; }
@@ -28,10 +22,5 @@ namespace GraphQL_Demo.Models
         public string URL { get; set; }
         public string CATEGORIES { get; set; }
         public Nullable<int> RATING_ID { get; set; }
-    
-        public virtual Tbl_Author Tbl_Author { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tbl_Comment> Tbl_Comment { get; set; }
-        public virtual Tbl_Rating Tbl_Rating { get; set; }
     }
 }

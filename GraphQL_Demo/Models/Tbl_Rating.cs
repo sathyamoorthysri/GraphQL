@@ -14,17 +14,8 @@ namespace GraphQL_Demo.Models
     
     public partial class Tbl_Rating
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Tbl_Rating()
-        {
-            this.Tbl_Post = new HashSet<Tbl_Post>();
-        }
-    
         public int ID { get; set; }
         public Nullable<int> PERCENTAGE { get; set; }
         public Nullable<int> COUNT { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tbl_Post> Tbl_Post { get; set; }
     }
 }

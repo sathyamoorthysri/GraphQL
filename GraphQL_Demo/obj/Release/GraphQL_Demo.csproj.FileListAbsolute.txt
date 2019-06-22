@@ -522,3 +522,11 @@ C:\Sathya\Repos\GraphQLRe\GraphQL_Demo\obj\Release\GraphQL_Demo.csproj.CoreCompi
 C:\Sathya\Repos\GraphQLRe\GraphQL_Demo\obj\Release\GraphQL_Demo.csproj.CopyComplete
 C:\Sathya\Repos\GraphQLRe\GraphQL_Demo\obj\Release\GraphQL_Demo.dll
 C:\Sathya\Repos\GraphQLRe\GraphQL_Demo\obj\Release\GraphQL_Demo.pdb
+D:\03 WorkFolder\Workspace\GraphQL\GraphQL_Demo\bin\roslyn\csc.exe
+D:\03 WorkFolder\Workspace\GraphQL\GraphQL_Demo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\03 WorkFolder\Workspace\GraphQL\GraphQL_Demo\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\03 WorkFolder\Workspace\GraphQL\GraphQL_Demo\bin\roslyn\System.Collections.Immutable.dll
+D:\03 WorkFolder\Workspace\GraphQL\GraphQL_Demo\bin\roslyn\System.IO.FileSystem.dll
+D:\03 WorkFolder\Workspace\GraphQL\GraphQL_Demo\bin\roslyn\System.Reflection.Metadata.dll
+D:\03 WorkFolder\Workspace\GraphQL\GraphQL_Demo\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\03 WorkFolder\Workspace\GraphQL\GraphQL_Demo\bin\roslyn\System.Text.Encoding.CodePages.dll

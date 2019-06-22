@@ -19,7 +19,5 @@ namespace GraphQL_Demo.Models
         public string DESCRIPTION { get; set; }
         public string URL { get; set; }
         public Nullable<int> COUNT { get; set; }
-    
-        public virtual Tbl_Post Tbl_Post { get; set; }
     }
 }
