@@ -4,9 +4,9 @@ using GraphQL_Demo.Queries.Types;
 
 namespace GraphQL_Demo.Queries
 {
-    public class AuthorQuery : ObjectGraphType
+    public class ArticleCatalogue : ObjectGraphType
     {
-        public AuthorQuery(DataService blogService)
+        public ArticleCatalogue(DataService dataService)
         {
             Field<AuthorType>(
                 name: "author",
@@ -14,7 +14,7 @@ namespace GraphQL_Demo.Queries
                 resolve: context =>
                 {
                     var id = context.GetArgument<int>("id");
-                    return blogService.GetAuthorById(id);
+                    return dataService.GetAuthorById(id);
                 }
             );
             Field<ListGraphType<PostType>>(
@@ -23,7 +23,7 @@ namespace GraphQL_Demo.Queries
                 resolve: context =>
                 {
                     var id = context.GetArgument<int>("id");
-                    return blogService.GetPostsByAuthor(id);
+                    return dataService.GetPostsByAuthor(id);
                 }
             );
             Field<ListGraphType<SocialNetworkType>>(
@@ -32,7 +32,7 @@ namespace GraphQL_Demo.Queries
                 resolve: context =>
                 {
                     var id = context.GetArgument<int>("id");
-                    return blogService.GetSNsByAuthor(id);
+                    return dataService.GetSNsByAuthor(id);
                 }
             );
         }

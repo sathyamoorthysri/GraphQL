@@ -21,7 +21,7 @@ namespace GraphQL_Demo.Controllers
 
         public async Task<object> Post([FromBody] GraphQlQuery query)
         {
-            var schema = new Schema { Query = new AuthorQuery(dataService) };
+            var schema = new Schema { Query = new ArticleCatalogue(dataService) };
             var result = await new DocumentExecuter().ExecuteAsync(x =>
             {
                 x.Schema = schema;

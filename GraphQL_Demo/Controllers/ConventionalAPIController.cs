@@ -11,35 +11,35 @@ namespace GraphQL_Demo.Controllers
 {
     public class ConventionalAPIController : System.Web.Http.ApiController
     {
-        readonly DataService blogService;
+        readonly DataService dataService;
 
         public ConventionalAPIController()
         {
-            this.blogService = new DataService();
+            this.dataService = new DataService();
         }
 
         [HttpGet]
         public IActionResult GetAllData()
         {
-            return new ObjectResult(blogService.GetAllAuthors());
+            return new ObjectResult(dataService.GetAllAuthors());
         }
 
         [HttpGet("{id}")]
         public IActionResult GetAuthorDataById(int id)
         {
-            return new ObjectResult(blogService.GetAuthorById(id));
+            return new ObjectResult(dataService.GetAuthorById(id));
         }
 
         [HttpGet("{id}/posts")]
         public IActionResult GetPostsDetailsByAuthor(int id)
         {
-            return new ObjectResult(blogService.GetPostsByAuthor(id));
+            return new ObjectResult(dataService.GetPostsByAuthor(id));
         }
 
         [HttpGet("{id}/socials")]
         public IActionResult GetSocialSitesDetailsByAuthor(int id)
         {
-            return new ObjectResult(blogService.GetSNsByAuthor(id));
+            return new ObjectResult(dataService.GetSNsByAuthor(id));
         }
     }
 }
