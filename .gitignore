@@ -2,11 +2,11 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/GraphQL_Demo
-/.vs/GraphQL
-/GraphQL_Demo/bin/
-/GraphQL_Demo/obj/
-*.dll
-*.manifest
-*.txt
-*.cache
+/.vs
+/packages
+/**/bin
+/**/obj
+
+*.user
+
+//git rm --cached .\GraphQL_Demo\bin\*
